@@ -26,6 +26,8 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.query.algebra.evaluation.ValueExprEvaluationException;
 import org.openrdf.query.algebra.evaluation.function.FunctionRegistry;
 
+import java.text.MessageFormat;
+
 /**
  * Returns the shortest distance in units between any two Points of two
  * geometries. Should be implemented directly in the database, as the in-memory
@@ -84,10 +86,11 @@ public class DistanceFunction implements NativeFunction {
     @Override
     public String getNative(KiWiDialect dialect, String... args) {
         if (dialect instanceof PostgreSQLDialect) {
-            if (args.length == 3) {
+            if (args.length == 2 || args.length == 3) {
                 String geom1 = args[0];
                 String geom2 = args[1];
                 String SRID_default = "4326";
+                
                 /*
                  * The following condition is required to read WKT  inserted directly into args[0] or args[1] and create a geometries with SRID
                  * POINT, MULTIPOINT, LINESTRING ... and MULTIPOLYGON conditions: 
@@ -101,15 +104,26 @@ public class DistanceFunction implements NativeFunction {
                 if (args[1].contains("POINT") || args[1].contains("MULTIPOINT") || args[1].contains("LINESTRING") || args[1].contains("MULTILINESTRING") || args[1].contains("POLYGON") || args[1].contains("MULTIPOLYGON") || args[1].contains("ST_AsText")) {
                     geom2 = String.format("ST_GeomFromText(%s,%s)", args[1], SRID_default);
                 }
-                if (args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.meter.toString() + "'") || args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.metre.toString() + "'")) {
-                    return String.format("ST_Distance( ST_Transform( %s ,26986), ST_Transform( %s ,26986))", geom1, geom2);
+                
+                if (args.length == 3 && (args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.meter.toString() + "'") || args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.metre.toString() + "'"))) {
+                    geom1 = String.format("ST_Transform(%s, 26986)", geom1);
+                    geom2 = String.format("ST_Transform(%s, 26986)", geom2);
                 }
-                if (args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.degree.toString() + "'")) {
-                    return String.format("ST_Distance(%s, %s)", geom1, geom2);
+                
+                String queryFormat = 
+                    "{0} IS NOT NULL AND {1} IS NOT NULL AND CASE            " +
+                    "    WHEN (ST_CoordDim({0}) = 3 and ST_CoordDim({1}) = 3)" +
+                    "    THEN (ST_3DDistance({0}, {1}))                      " +
+                    "    ELSE (ST_Distance({0}, {1}))                        " +
+                    "END                                                     " ;
+                
+                String clause = MessageFormat.format(queryFormat, geom1, geom2);
+                
+                if (args.length == 3 && args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.radian.toString() + "'")) {
+                    clause = String.format("RADIANS( %s )", clause);
                 }
-                if (args[2].equalsIgnoreCase("'" + FN_GEOSPARQL.radian.toString() + "'")) {
-                    return String.format("RADIANS(ST_Distance(%s, %s))", geom1, geom2);
-                }
+                
+                return clause;
             }
         }
         throw new UnsupportedOperationException("Distance function not supported by dialect " + dialect);
@@ -145,7 +159,7 @@ public class DistanceFunction implements NativeFunction {
      */
     @Override
     public int getMinArgs() {
-        return 3;
+        return 2;
     }
 
     /**

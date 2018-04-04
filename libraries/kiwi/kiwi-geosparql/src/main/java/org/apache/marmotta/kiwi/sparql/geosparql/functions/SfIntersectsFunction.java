@@ -26,6 +26,8 @@ import org.openrdf.model.ValueFactory;
 import org.openrdf.query.algebra.evaluation.ValueExprEvaluationException;
 import org.openrdf.query.algebra.evaluation.function.FunctionRegistry;
 
+import java.text.MessageFormat;
+
 /**
  * A SPARQL function for doing a intersection between two geometries. Should be
  * implemented directly in the database, as the in-memory implementation is
@@ -101,7 +103,33 @@ public class SfIntersectsFunction implements NativeFunction {
                 if (args[1].contains("POINT") || args[1].contains("MULTIPOINT") || args[1].contains("LINESTRING") || args[1].contains("MULTILINESTRING") || args[1].contains("POLYGON") || args[1].contains("MULTIPOLYGON") || args[1].contains("ST_AsText")) {
                     geom2 = String.format("ST_GeomFromText(%s,%s)", args[1], SRID_default);
                 }
-                return String.format("st_Intersects(%s , %s ) ", geom1, geom2);
+                
+                String queryFormat =
+                        "CASE                                           " +
+                        "    WHEN (                                     " +
+                        "        ST_CoordDim({0}) = 3 and               " +
+                        "        ST_CoordDim({1}) = 3 and               " +
+                        "        ST_NumPatches({0}) is not null and     " +
+                        "        ST_NumPatches({1}) is not null         " +
+                        "    )                                          " +
+                        "    THEN (                                     " +
+                        "        CASE                                   " +
+                        "            WHEN {0} &&& {1}                   " +
+                        "            THEN (                             " +
+                        "                ( ST_Volume(ST_3Dunion(        " +
+                        "                    st_makesolid({0}),         " +
+                        "                    st_makesolid({1})          " +
+                        "                )) + 0.000001 ) <              " +
+                        "                ST_Volume(st_makesolid({0})) + " +
+                        "                ST_Volume(st_makesolid({1}))   " +
+                        "            )                                  " +
+                        "            ELSE FALSE                         " +
+                        "        END                                    " +
+                        "    )                                          " +
+                        "    ELSE ST_Intersects({0}, {1})               " +
+                        "END;                                           " ;
+                
+                return MessageFormat.format(queryFormat, geom1, geom2);
             }
         }
         throw new UnsupportedOperationException("Intersects function not supported by dialect " + dialect);

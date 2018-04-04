@@ -67,7 +67,16 @@ public class KiWiConnection implements AutoCloseable {
     protected CacheManager cacheManager;
 
     protected TripleTable<KiWiTriple> tripleBatch;
-
+    
+    // From: https://en.wikipedia.org/wiki/Well-known_text#Well-known_binary
+    private static final String[] wktGeometryNames = {
+        "GEOMETRYCOLLECTION", "GEOMETRY", "MULTIPOINT", "POINT", "MULTILINESTRING",
+        "LINESTRING", "MULTIPOLYGON", "CURVEPOLYGON", "POLYGON", "COMPOUNDCURVE",
+        "MULTICURVE", "CIRCULARSTRING", "ELLIPTICALCURVE", "NURBSCURVE", "SPIRALCURVE", 
+        "CURVE", "MULTISURFACE", "POLYHEDRALSURFACE", "COMPOUNDSURFACE", "SURFACE", 
+        "TIN", "TRIANGLE", "CIRCLE", "GEODESICSTRING", "CLOTHOID", "BREPSOLID" 
+    };
+    
     /**
      * Cache nodes by database ID
      */
@@ -1150,14 +1159,11 @@ public class KiWiConnection implements AutoCloseable {
 
             String gvalue = "";
 
-            if (geoLiteral.getContent().contains("POINT")) {
-                gvalue = geoLiteral.getContent().substring(geoLiteral.getContent().indexOf("POINT"));
-            }
-            if (geoLiteral.getContent().contains("MULTILINESTRING")) {
-                gvalue = geoLiteral.getContent().substring(geoLiteral.getContent().indexOf("MULTILINESTRING"));
-            }
-            if (geoLiteral.getContent().contains("MULTIPOLYGON")) {
-                gvalue = geoLiteral.getContent().substring(geoLiteral.getContent().indexOf("MULTIPOLYGON"));
+            for (int i = 0; i < wktGeometryNames.length; i++) {
+                if (geoLiteral.getContent().contains(wktGeometryNames[i])) {
+                    gvalue = geoLiteral.getContent().substring(geoLiteral.getContent().indexOf(wktGeometryNames[i]));
+                    break;
+                }
             }
 
             PreparedStatement insertNode = getPreparedStatement("store.gliteral");

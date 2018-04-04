@@ -20,15 +20,10 @@ ENV CONF_PATH /var/lib/marmotta/system-config.properties
 # prepare the environment
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y \
+    && apt-get install -y -t jessie-backports \
 		openjdk-8-jdk \
 		maven \
-        tomcat7 \
-    || apt-get install -y -f
-
-# build
-RUN mvn clean install -DskipTests -DskipITs
-RUN test -e $WAR_PATH || exit
+        tomcat7
 
 # install and configure postgres from the PGDG repo
 RUN apt-get update && apt-get install -y locales apt-utils \
@@ -42,15 +37,29 @@ RUN apt-get update \
 	&& apt-get install -y \
 		postgresql-$PG_VERSION \
 		postgresql-contrib-$PG_VERSION
+
 RUN pg_createcluster $PG_VERSION main --start
 USER postgres
 RUN service postgresql start \
     && psql --command "CREATE USER $DB_USER WITH PASSWORD '$DB_PASS';" \
-    && psql --command "CREATE DATABASE $DB_NAME WITH OWNER $DB_USER;"
+    && psql --command "CREATE DATABASE $DB_NAME WITH OWNER $DB_USER;" \
+    && psql --command "ALTER ROLE $DB_USER superuser;"
 USER root
 RUN service postgresql stop
 RUN echo "host all  all    127.0.0.1/32  md5" >> /etc/postgresql/$PG_VERSION/main/pg_hba.conf
 RUN echo "listen_addresses='*'" >> /etc/postgresql/$PG_VERSION/main/postgresql.conf
+
+# setup postgis
+RUN apt-get update && apt-get install -y postgresql-9.4-postgis-scripts postgresql-9.4-postgis-2.3
+
+# build
+RUN mvn clean install -DskipTests -DskipITs
+# tfk: an approach to build incremental changes, write git diff to patch0 and keep working tree clean
+# RUN apt-get update && apt-get install patch
+# ADD patch0.patch patch0.patch
+# RUN patch -p1 < patch0.patch
+# RUN mvn -T 1C install -DskipTests -DskipITs
+RUN test -e $WAR_PATH || exit
 
 # install the webapp
 #RUN dpkg --debug=2000 --install target/marmotta_*_all.deb <-- we'd need to fix the postinst
@@ -65,6 +74,8 @@ RUN echo "database.type = postgres" >> $CONF_PATH
 RUN echo "database.url = jdbc:postgresql://localhost:5432/$DB_NAME?prepareThreshold=3" >> $CONF_PATH
 RUN echo "database.user = $DB_USER" >> $CONF_PATH
 RUN echo "database.password = $DB_PASS" >> $CONF_PATH
+RUN echo "sparql.timeout = 86400" >> $CONF_PATH
+
 RUN chown -R tomcat7:tomcat7 "$(dirname $CONF_PATH)"
 
 # cleanup

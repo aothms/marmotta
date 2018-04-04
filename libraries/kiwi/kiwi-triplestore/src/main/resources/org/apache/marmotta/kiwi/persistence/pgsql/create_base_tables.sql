@@ -18,8 +18,11 @@
 CREATE TYPE nodetype AS ENUM ('uri','bnode','string','int','double','date','boolean','geom');
 
 
---necessary for use geometry queries
+-- necessary for use geometry queries
 CREATE EXTENSION IF NOT EXISTS postgis;
+
+-- for queries on 3d geometry
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
 
 
 -- requires super user privileges:
@@ -88,6 +91,7 @@ CREATE INDEX idx_node_content ON nodes USING hash(svalue);
 CREATE INDEX idx_node_dcontent ON nodes(dvalue) WHERE dvalue IS NOT NULL;
 CREATE INDEX idx_node_icontent ON nodes(ivalue) WHERE ivalue IS NOT NULL;
 CREATE INDEX idx_node_tcontent ON nodes(tvalue) WHERE tvalue IS NOT NULL;
+CREATE INDEX idx_node_geometry ON nodes USING gist(gvalue);
 CREATE INDEX idx_literal_lang ON nodes(lang);
 
 CREATE INDEX idx_triples_p ON triples(predicate) WHERE deleted = false;
