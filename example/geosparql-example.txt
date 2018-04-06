@@ -1,0 +1,20 @@
+PREFIX ifcowl: <http://www.buildingsmart-tech.org/ifcOWL/IFC2X3_TC1#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX express:  <http://purl.org/voc/express#>
+
+SELECT ?name WHERE {
+  ?s a ifcowl:IfcSpace .
+  ?s geo:hasGeometry/geo:asWKT ?sg .
+  ?s ifcowl:name_IfcRoot/express:hasString ?name .
+  
+  FILTER NOT EXISTS {
+    ?t a ifcowl:IfcFlowTerminal .
+    ?t geo:hasGeometry/geo:asWKT ?tg .
+    ?rel ifcowl:relatedObjects_IfcRelDefines ?t .
+    ?rel ifcowl:relatingType_IfcRelDefinesByType ?type .
+    ?type a ifcowl:IfcAirTerminalType .
+    
+    FILTER(geof:distance(?tg, ?sg) < 0.01)
+  }
+}

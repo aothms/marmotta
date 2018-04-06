@@ -1,0 +1,2271 @@
+@prefix ifcowl:  <http://www.buildingsmart-tech.org/ifcOWL/IFC2X3_TC1#> .
+@prefix inst:  <http://linkedbuildingdata.net/ifc/resources20180406_105447/> .
+@prefix list:  <http://www.co-ode.org/ontologies/list.owl#> .
+@prefix express:  <http://purl.org/voc/express#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+inst:IfcPerson_1  rdf:type  ifcowl:IfcPerson .
+
+inst:IfcLabel_119  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "cskender" .
+
+inst:IfcPerson_1  ifcowl:givenName_IfcPerson  inst:IfcLabel_119 .
+
+inst:IfcOrganization_2
+        rdf:type  ifcowl:IfcOrganization .
+
+inst:IfcLabel_120  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "" .
+
+inst:IfcOrganization_2
+        ifcowl:name_IfcOrganization  inst:IfcLabel_120 ;
+        ifcowl:description_IfcOrganization  inst:IfcLabel_120 .
+
+inst:IfcPersonAndOrganization_3
+        rdf:type  ifcowl:IfcPersonAndOrganization ;
+        ifcowl:thePerson_IfcPersonAndOrganization  inst:IfcPerson_1 ;
+        ifcowl:theOrganization_IfcPersonAndOrganization  inst:IfcOrganization_2 .
+
+inst:IfcOrganization_4
+        rdf:type  ifcowl:IfcOrganization .
+
+inst:IfcLabel_121  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "Autodesk Revit Architecture 2011" .
+
+inst:IfcOrganization_4
+        ifcowl:name_IfcOrganization  inst:IfcLabel_121 .
+
+inst:IfcApplication_5
+        rdf:type  ifcowl:IfcApplication ;
+        ifcowl:applicationDeveloper_IfcApplication  inst:IfcOrganization_4 .
+
+inst:IfcLabel_122  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "2011" .
+
+inst:IfcApplication_5
+        ifcowl:version_IfcApplication  inst:IfcLabel_122 ;
+        ifcowl:applicationFullName_IfcApplication  inst:IfcLabel_121 .
+
+inst:IfcIdentifier_123
+        rdf:type           ifcowl:IfcIdentifier ;
+        express:hasString  "Revit" .
+
+inst:IfcApplication_5
+        ifcowl:applicationIdentifier_IfcApplication  inst:IfcIdentifier_123 .
+
+inst:IfcOwnerHistory_6
+        rdf:type  ifcowl:IfcOwnerHistory ;
+        ifcowl:owningUser_IfcOwnerHistory  inst:IfcPersonAndOrganization_3 ;
+        ifcowl:owningApplication_IfcOwnerHistory  inst:IfcApplication_5 ;
+        ifcowl:changeAction_IfcOwnerHistory  ifcowl:NOCHANGE .
+
+inst:IfcTimeStamp_124
+        rdf:type            ifcowl:IfcTimeStamp ;
+        express:hasInteger  0 .
+
+inst:IfcOwnerHistory_6
+        ifcowl:creationDate_IfcOwnerHistory  inst:IfcTimeStamp_124 .
+
+inst:IfcCartesianPoint_7
+        rdf:type  ifcowl:IfcCartesianPoint .
+
+inst:IfcLengthMeasure_List_125
+        rdf:type  ifcowl:IfcLengthMeasure_List .
+
+inst:IfcCartesianPoint_7
+        ifcowl:coordinates_IfcCartesianPoint  inst:IfcLengthMeasure_List_125 .
+
+inst:IfcLengthMeasure_List_126
+        rdf:type  ifcowl:IfcLengthMeasure_List .
+
+inst:IfcLengthMeasure_List_127
+        rdf:type  ifcowl:IfcLengthMeasure_List .
+
+inst:IfcLengthMeasure_128
+        rdf:type           ifcowl:IfcLengthMeasure ;
+        express:hasDouble  "0."^^xsd:double .
+
+inst:IfcLengthMeasure_List_125
+        list:hasContents  inst:IfcLengthMeasure_128 ;
+        list:hasNext      inst:IfcLengthMeasure_List_126 .
+
+inst:IfcLengthMeasure_List_126
+        list:hasContents  inst:IfcLengthMeasure_128 ;
+        list:hasNext      inst:IfcLengthMeasure_List_127 .
+
+inst:IfcLengthMeasure_List_127
+        list:hasContents  inst:IfcLengthMeasure_128 .
+
+inst:IfcAxis2Placement3D_8
+        rdf:type                      ifcowl:IfcAxis2Placement3D ;
+        ifcowl:location_IfcPlacement  inst:IfcCartesianPoint_7 .
+
+inst:IfcGeometricRepresentationContext_9
+        rdf:type  ifcowl:IfcGeometricRepresentationContext .
+
+inst:IfcLabel_129  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "Model" .
+
+inst:IfcGeometricRepresentationContext_9
+        ifcowl:contextType_IfcRepresentationContext  inst:IfcLabel_129 .
+
+inst:IfcDimensionCount_130
+        rdf:type            ifcowl:IfcDimensionCount ;
+        express:hasInteger  3 .
+
+inst:IfcGeometricRepresentationContext_9
+        ifcowl:coordinateSpaceDimension_IfcGeometricRepresentationContext  inst:IfcDimensionCount_130 .
+
+inst:REAL_131  rdf:type    express:REAL ;
+        express:hasDouble  1.E-09 .
+
+inst:IfcGeometricRepresentationContext_9
+        ifcowl:precision_IfcGeometricRepresentationContext  inst:REAL_131 ;
+        ifcowl:worldCoordinateSystem_IfcGeometricRepresentationContext  inst:IfcAxis2Placement3D_8 .
+
+inst:IfcGeometricRepresentationContext_10
+        rdf:type  ifcowl:IfcGeometricRepresentationContext .
+
+inst:IfcLabel_132  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "Plan" .
+
+inst:IfcGeometricRepresentationContext_10
+        ifcowl:contextType_IfcRepresentationContext  inst:IfcLabel_132 ;
+        ifcowl:coordinateSpaceDimension_IfcGeometricRepresentationContext  inst:IfcDimensionCount_130 ;
+        ifcowl:precision_IfcGeometricRepresentationContext  inst:REAL_131 ;
+        ifcowl:worldCoordinateSystem_IfcGeometricRepresentationContext  inst:IfcAxis2Placement3D_8 .
+
+inst:IfcSIUnit_11  rdf:type           ifcowl:IfcSIUnit ;
+        ifcowl:unitType_IfcNamedUnit  ifcowl:LENGTHUNIT ;
+        ifcowl:name_IfcSIUnit         ifcowl:METRE .
+
+inst:IfcSIUnit_12  rdf:type           ifcowl:IfcSIUnit ;
+        ifcowl:unitType_IfcNamedUnit  ifcowl:AREAUNIT ;
+        ifcowl:name_IfcSIUnit         ifcowl:SQUARE_METRE .
+
+inst:IfcSIUnit_13  rdf:type           ifcowl:IfcSIUnit ;
+        ifcowl:unitType_IfcNamedUnit  ifcowl:VOLUMEUNIT ;
+        ifcowl:name_IfcSIUnit         ifcowl:CUBIC_METRE .
+
+inst:IfcDimensionalExponents_14
+        rdf:type  ifcowl:IfcDimensionalExponents ;
+        ifcowl:lengthExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:massExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:timeExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:electricCurrentExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:thermodynamicTemperatureExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:amountOfSubstanceExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 ;
+        ifcowl:luminousIntensityExponent_IfcDimensionalExponents  inst:IfcTimeStamp_124 .
+
+inst:IfcSIUnit_15  rdf:type           ifcowl:IfcSIUnit ;
+        ifcowl:unitType_IfcNamedUnit  ifcowl:PLANEANGLEUNIT ;
+        ifcowl:name_IfcSIUnit         ifcowl:RADIAN .
+
+inst:IfcMeasureWithUnit_16
+        rdf:type  ifcowl:IfcMeasureWithUnit .
+
+inst:IfcRatioMeasure_133
+        rdf:type           ifcowl:IfcRatioMeasure ;
+        express:hasDouble  "0.0174532925199433"^^xsd:double .
+
+inst:IfcMeasureWithUnit_16
+        ifcowl:valueComponent_IfcMeasureWithUnit  inst:IfcRatioMeasure_133 ;
+        ifcowl:unitComponent_IfcMeasureWithUnit  inst:IfcSIUnit_15 .
+
+inst:IfcConversionBasedUnit_17
+        rdf:type                        ifcowl:IfcConversionBasedUnit ;
+        ifcowl:dimensions_IfcNamedUnit  inst:IfcDimensionalExponents_14 ;
+        ifcowl:unitType_IfcNamedUnit    ifcowl:PLANEANGLEUNIT .
+
+inst:IfcLabel_134  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "DEGREE" .
+
+inst:IfcConversionBasedUnit_17
+        ifcowl:name_IfcConversionBasedUnit  inst:IfcLabel_134 ;
+        ifcowl:conversionFactor_IfcConversionBasedUnit  inst:IfcMeasureWithUnit_16 .
+
+inst:IfcSIUnit_18  rdf:type           ifcowl:IfcSIUnit ;
+        ifcowl:unitType_IfcNamedUnit  ifcowl:TIMEUNIT ;
+        ifcowl:name_IfcSIUnit         ifcowl:SECOND .
+
+inst:IfcUnitAssignment_19
+        rdf:type                        ifcowl:IfcUnitAssignment ;
+        ifcowl:units_IfcUnitAssignment  inst:IfcSIUnit_11 ;
+        ifcowl:units_IfcUnitAssignment  inst:IfcSIUnit_12 ;
+        ifcowl:units_IfcUnitAssignment  inst:IfcSIUnit_13 ;
+        ifcowl:units_IfcUnitAssignment  inst:IfcConversionBasedUnit_17 ;
+        ifcowl:units_IfcUnitAssignment  inst:IfcSIUnit_18 .
+
+inst:IfcProject_20  rdf:type  ifcowl:IfcProject .
+
+inst:IfcGloballyUniqueId_135
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "27TOPmxCrDgPimmYFfwtvF" .
+
+inst:IfcProject_20  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_135 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_136  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "Project Number" .
+
+inst:IfcProject_20  ifcowl:name_IfcRoot  inst:IfcLabel_136 ;
+        ifcowl:longName_IfcProject  inst:IfcLabel_120 .
+
+inst:IfcLabel_137  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "Project Status" .
+
+inst:IfcProject_20  ifcowl:phase_IfcProject  inst:IfcLabel_137 ;
+        ifcowl:representationContexts_IfcProject  inst:IfcGeometricRepresentationContext_9 ;
+        ifcowl:representationContexts_IfcProject  inst:IfcGeometricRepresentationContext_10 ;
+        ifcowl:unitsInContext_IfcProject  inst:IfcUnitAssignment_19 .
+
+inst:IfcSpace_21  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_138
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYR" .
+
+inst:IfcSpace_21  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_138 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_139  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "203" .
+
+inst:IfcSpace_21  ifcowl:name_IfcRoot  inst:IfcLabel_139 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_140  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "OPEN OFFICE" .
+
+inst:IfcSpace_21  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_22  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_141
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgtD" .
+
+inst:IfcSpace_22  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_141 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_142  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "121" .
+
+inst:IfcSpace_22  ifcowl:name_IfcRoot  inst:IfcLabel_142 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_143  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CORRIDOR" .
+
+inst:IfcSpace_22  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_23  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_144
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCu" .
+
+inst:IfcSpace_23  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_144 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_145  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "140" .
+
+inst:IfcSpace_23  ifcowl:name_IfcRoot  inst:IfcLabel_145 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_24  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_146
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYC" .
+
+inst:IfcSpace_24  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_146 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_147  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "201" .
+
+inst:IfcSpace_24  ifcowl:name_IfcRoot  inst:IfcLabel_147 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_25  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_148
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqW4" .
+
+inst:IfcSpace_25  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_148 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_149  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "237" .
+
+inst:IfcSpace_25  ifcowl:name_IfcRoot  inst:IfcLabel_149 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_26  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_150
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgC3" .
+
+inst:IfcSpace_26  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_150 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_151  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "143" .
+
+inst:IfcSpace_26  ifcowl:name_IfcRoot  inst:IfcLabel_151 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_152  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SCIF OPEN OFFICE" .
+
+inst:IfcSpace_26  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_152 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_27  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_153
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmy" .
+
+inst:IfcSpace_27  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_153 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_154  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "113" .
+
+inst:IfcSpace_27  ifcowl:name_IfcRoot  inst:IfcLabel_154 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_28  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_155
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXH" .
+
+inst:IfcSpace_28  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_155 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_156  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "221" .
+
+inst:IfcSpace_28  ifcowl:name_IfcRoot  inst:IfcLabel_156 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_29  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_157
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsV" .
+
+inst:IfcSpace_29  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_157 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_158  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "135" .
+
+inst:IfcSpace_29  ifcowl:name_IfcRoot  inst:IfcLabel_158 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_159  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "MENS RR" .
+
+inst:IfcSpace_29  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_159 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_30  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_160
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCz" .
+
+inst:IfcSpace_30  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_160 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_161  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "141" .
+
+inst:IfcSpace_30  ifcowl:name_IfcRoot  inst:IfcLabel_161 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_31  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_162
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYO" .
+
+inst:IfcSpace_31  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_162 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_163  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "202" .
+
+inst:IfcSpace_31  ifcowl:name_IfcRoot  inst:IfcLabel_163 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_32  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_164
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXi" .
+
+inst:IfcSpace_32  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_164 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_165  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "229" .
+
+inst:IfcSpace_32  ifcowl:name_IfcRoot  inst:IfcLabel_165 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_33  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_166
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgrW" .
+
+inst:IfcSpace_33  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_166 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_167  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "136" .
+
+inst:IfcSpace_33  ifcowl:name_IfcRoot  inst:IfcLabel_167 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_168  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "WOMENS RR" .
+
+inst:IfcSpace_33  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_168 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_34  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_169
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgt2" .
+
+inst:IfcSpace_34  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_169 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_170  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "118" .
+
+inst:IfcSpace_34  ifcowl:name_IfcRoot  inst:IfcLabel_170 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_171  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "MECH RM" .
+
+inst:IfcSpace_34  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_171 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_35  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_172
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3k" .
+
+inst:IfcSpace_35  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_172 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_173  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "158" .
+
+inst:IfcSpace_35  ifcowl:name_IfcRoot  inst:IfcLabel_173 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_174  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "NOC" .
+
+inst:IfcSpace_35  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_174 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_36  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_175
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "2p9k3Vk8DEmPDRJ6691rGh" .
+
+inst:IfcSpace_36  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_175 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_176  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "142" .
+
+inst:IfcSpace_36  ifcowl:name_IfcRoot  inst:IfcLabel_176 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_37  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_177
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCR" .
+
+inst:IfcSpace_37  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_177 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_178  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "151" .
+
+inst:IfcSpace_37  ifcowl:name_IfcRoot  inst:IfcLabel_178 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_179  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "BOC" .
+
+inst:IfcSpace_37  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_179 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_38  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_180
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYj" .
+
+inst:IfcSpace_38  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_180 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_181  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "209" .
+
+inst:IfcSpace_38  ifcowl:name_IfcRoot  inst:IfcLabel_181 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_159 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_39  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_182
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYX" .
+
+inst:IfcSpace_39  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_182 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_183  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "205" .
+
+inst:IfcSpace_39  ifcowl:name_IfcRoot  inst:IfcLabel_183 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_184  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SECURE DOC ROOM" .
+
+inst:IfcSpace_39  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_184 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_40  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_185
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgs1" .
+
+inst:IfcSpace_40  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_185 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_186  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "125" .
+
+inst:IfcSpace_40  ifcowl:name_IfcRoot  inst:IfcLabel_186 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_187  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "BREAK RM" .
+
+inst:IfcSpace_40  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_187 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_41  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_188
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXB" .
+
+inst:IfcSpace_41  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_188 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_189  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "219" .
+
+inst:IfcSpace_41  ifcowl:name_IfcRoot  inst:IfcLabel_189 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_171 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_42  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_190
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmr" .
+
+inst:IfcSpace_42  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_190 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_191  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "110" .
+
+inst:IfcSpace_42  ifcowl:name_IfcRoot  inst:IfcLabel_191 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_192  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CMD CONFERENCE RM" .
+
+inst:IfcSpace_42  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_192 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_43  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_193
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYd" .
+
+inst:IfcSpace_43  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_193 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_194  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "207" .
+
+inst:IfcSpace_43  ifcowl:name_IfcRoot  inst:IfcLabel_194 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_168 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_44  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_195
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXo" .
+
+inst:IfcSpace_44  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_195 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_196  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "231" .
+
+inst:IfcSpace_44  ifcowl:name_IfcRoot  inst:IfcLabel_196 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_187 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_45  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_197
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgrb" .
+
+inst:IfcSpace_45  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_197 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_198  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "137" .
+
+inst:IfcSpace_45  ifcowl:name_IfcRoot  inst:IfcLabel_198 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_199  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-4 CNTL FILES" .
+
+inst:IfcSpace_45  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_199 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_46  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_200
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXQ" .
+
+inst:IfcSpace_46  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_200 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_201  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "223" .
+
+inst:IfcSpace_46  ifcowl:name_IfcRoot  inst:IfcLabel_201 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_143 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_47  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_202
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmf" .
+
+inst:IfcSpace_47  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_202 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_203  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "106" .
+
+inst:IfcSpace_47  ifcowl:name_IfcRoot  inst:IfcLabel_203 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_204  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CMDR OFFICE" .
+
+inst:IfcSpace_47  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_204 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_48  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_205
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgml" .
+
+inst:IfcSpace_48  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_205 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_206  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "108" .
+
+inst:IfcSpace_48  ifcowl:name_IfcRoot  inst:IfcLabel_206 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_207  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "ELEC RM" .
+
+inst:IfcSpace_48  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_207 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_49  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_208
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCM" .
+
+inst:IfcSpace_49  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_208 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_209  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "150" .
+
+inst:IfcSpace_49  ifcowl:name_IfcRoot  inst:IfcLabel_209 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_210  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CONFERENCE RM" .
+
+inst:IfcSpace_49  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_210 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_50  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_211
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCL" .
+
+inst:IfcSpace_50  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_211 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_212  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "149" .
+
+inst:IfcSpace_50  ifcowl:name_IfcRoot  inst:IfcLabel_212 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_210 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_51  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_213
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgs7" .
+
+inst:IfcSpace_51  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_213 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_214  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "127" .
+
+inst:IfcSpace_51  ifcowl:name_IfcRoot  inst:IfcLabel_214 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_215  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "FIELD SURGEON" .
+
+inst:IfcSpace_51  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_215 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_52  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_216
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmg" .
+
+inst:IfcSpace_52  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_216 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_217  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "107" .
+
+inst:IfcSpace_52  ifcowl:name_IfcRoot  inst:IfcLabel_217 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_218  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CMD RR" .
+
+inst:IfcSpace_52  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_218 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_53  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_219
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgts" .
+
+inst:IfcSpace_53  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_219 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_220  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "114" .
+
+inst:IfcSpace_53  ifcowl:name_IfcRoot  inst:IfcLabel_220 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_140 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_54  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_221
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgs2" .
+
+inst:IfcSpace_54  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_221 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_222  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "126" .
+
+inst:IfcSpace_54  ifcowl:name_IfcRoot  inst:IfcLabel_222 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_223  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "REENLST OFF" .
+
+inst:IfcSpace_54  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_223 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_55  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_224
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCG" .
+
+inst:IfcSpace_55  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_224 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_225  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "148" .
+
+inst:IfcSpace_55  ifcowl:name_IfcRoot  inst:IfcLabel_225 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_226  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SIGINT" .
+
+inst:IfcSpace_55  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_226 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_56  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_227
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgtJ" .
+
+inst:IfcSpace_56  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_227 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_228  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "123" .
+
+inst:IfcSpace_56  ifcowl:name_IfcRoot  inst:IfcLabel_228 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_229  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "ELEV EQ RM" .
+
+inst:IfcSpace_56  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_229 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_57  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_230
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXZ" .
+
+inst:IfcSpace_57  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_230 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_231  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "226" .
+
+inst:IfcSpace_57  ifcowl:name_IfcRoot  inst:IfcLabel_231 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_232  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-4 CONFERENCE" .
+
+inst:IfcSpace_57  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_232 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_58  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_233
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgt1" .
+
+inst:IfcSpace_58  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_233 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_234  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "117" .
+
+inst:IfcSpace_58  ifcowl:name_IfcRoot  inst:IfcLabel_234 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_235  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-1/S-4 STOR" .
+
+inst:IfcSpace_58  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_235 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_59  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_236
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYs" .
+
+inst:IfcSpace_59  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_236 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_237  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "212" .
+
+inst:IfcSpace_59  ifcowl:name_IfcRoot  inst:IfcLabel_237 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_238  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "RECYCL" .
+
+inst:IfcSpace_59  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_238 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_60  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_239
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgrh" .
+
+inst:IfcSpace_60  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_239 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_240  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "139" .
+
+inst:IfcSpace_60  ifcowl:name_IfcRoot  inst:IfcLabel_240 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_241  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "TEAM RM" .
+
+inst:IfcSpace_60  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_61  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_242
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3X" .
+
+inst:IfcSpace_61  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_242 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_243  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "153" .
+
+inst:IfcSpace_61  ifcowl:name_IfcRoot  inst:IfcLabel_243 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_244  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "VEST/ENTRY" .
+
+inst:IfcSpace_61  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_244 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_62  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_245
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgtx" .
+
+inst:IfcSpace_62  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_245 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_246  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "115" .
+
+inst:IfcSpace_62  ifcowl:name_IfcRoot  inst:IfcLabel_246 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_247  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "TELE/COMM RM" .
+
+inst:IfcSpace_62  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_247 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_63  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_248
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgC4" .
+
+inst:IfcSpace_63  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_248 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_249  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "144" .
+
+inst:IfcSpace_63  ifcowl:name_IfcRoot  inst:IfcLabel_249 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_250  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SERVER RM" .
+
+inst:IfcSpace_63  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_250 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_64  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_251
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXK" .
+
+inst:IfcSpace_64  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_251 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_252  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "222" .
+
+inst:IfcSpace_64  ifcowl:name_IfcRoot  inst:IfcLabel_252 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_253  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-7 STORAGE" .
+
+inst:IfcSpace_64  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_253 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_65  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_254
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3j" .
+
+inst:IfcSpace_65  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_254 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_255  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "157" .
+
+inst:IfcSpace_65  ifcowl:name_IfcRoot  inst:IfcLabel_255 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_250 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_66  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_256
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXE" .
+
+inst:IfcSpace_66  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_256 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_257  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "220" .
+
+inst:IfcSpace_66  ifcowl:name_IfcRoot  inst:IfcLabel_257 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_258  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-3 STORAGE" .
+
+inst:IfcSpace_66  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_258 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_67  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_259
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgt8" .
+
+inst:IfcSpace_67  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_259 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_260  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S102" .
+
+inst:IfcSpace_67  ifcowl:name_IfcRoot  inst:IfcLabel_260 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_261  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "STAIR" .
+
+inst:IfcSpace_67  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_261 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_68  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_262
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsK" .
+
+inst:IfcSpace_68  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_262 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_263  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "132" .
+
+inst:IfcSpace_68  ifcowl:name_IfcRoot  inst:IfcLabel_263 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_264  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-1" .
+
+inst:IfcSpace_68  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_264 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_69  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_265
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgC_" .
+
+inst:IfcSpace_69  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_265 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_266  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S101" .
+
+inst:IfcSpace_69  ifcowl:name_IfcRoot  inst:IfcLabel_266 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_261 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_70  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_267
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3e" .
+
+inst:IfcSpace_70  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_267 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_268  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "156" .
+
+inst:IfcSpace_70  ifcowl:name_IfcRoot  inst:IfcLabel_268 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_269  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "A/V SERVER RM" .
+
+inst:IfcSpace_70  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_269 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_71  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_270
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYa" .
+
+inst:IfcSpace_71  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_270 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_271  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "206" .
+
+inst:IfcSpace_71  ifcowl:name_IfcRoot  inst:IfcLabel_271 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_272  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "OPS SGT" .
+
+inst:IfcSpace_71  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_272 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_72  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_273
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmm" .
+
+inst:IfcSpace_72  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_273 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_274  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "109" .
+
+inst:IfcSpace_72  ifcowl:name_IfcRoot  inst:IfcLabel_274 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_275  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CMD STORAGE" .
+
+inst:IfcSpace_72  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_275 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_73  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_276
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCF" .
+
+inst:IfcSpace_73  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_276 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_277  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "147" .
+
+inst:IfcSpace_73  ifcowl:name_IfcRoot  inst:IfcLabel_277 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_278  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "GEOINT" .
+
+inst:IfcSpace_73  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_278 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_74  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_279
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXl" .
+
+inst:IfcSpace_74  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_279 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_280  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "230" .
+
+inst:IfcSpace_74  ifcowl:name_IfcRoot  inst:IfcLabel_280 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_281  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-1 CONFERENCE" .
+
+inst:IfcSpace_74  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_281 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_75  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_282
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXu" .
+
+inst:IfcSpace_75  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_282 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_283  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "233" .
+
+inst:IfcSpace_75  ifcowl:name_IfcRoot  inst:IfcLabel_283 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_284  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-2" .
+
+inst:IfcSpace_75  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_284 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_76  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_285
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqX2" .
+
+inst:IfcSpace_76  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_285 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_286  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "216" .
+
+inst:IfcSpace_76  ifcowl:name_IfcRoot  inst:IfcLabel_286 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_77  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_287
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXf" .
+
+inst:IfcSpace_77  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_287 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_288  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "228" .
+
+inst:IfcSpace_77  ifcowl:name_IfcRoot  inst:IfcLabel_288 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_289  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-7 CONFERENCE" .
+
+inst:IfcSpace_77  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_289 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_78  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_290
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsJ" .
+
+inst:IfcSpace_78  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_290 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_291  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "131" .
+
+inst:IfcSpace_78  ifcowl:name_IfcRoot  inst:IfcLabel_291 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_292  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "MESSAGE CENTER" .
+
+inst:IfcSpace_78  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_292 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_79  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_293
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsQ" .
+
+inst:IfcSpace_79  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_293 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_294  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "134" .
+
+inst:IfcSpace_79  ifcowl:name_IfcRoot  inst:IfcLabel_294 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_295  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-1/S-4 CONFERENCE RM" .
+
+inst:IfcSpace_79  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_295 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_80  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_296
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXr" .
+
+inst:IfcSpace_80  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_296 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_297  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "232" .
+
+inst:IfcSpace_80  ifcowl:name_IfcRoot  inst:IfcLabel_297 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_298  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "JAN" .
+
+inst:IfcSpace_80  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_298 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_81  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_299
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXx" .
+
+inst:IfcSpace_81  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_299 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_300  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "234" .
+
+inst:IfcSpace_81  ifcowl:name_IfcRoot  inst:IfcLabel_300 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_301  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-6" .
+
+inst:IfcSpace_81  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_301 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_82  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_302
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgrc" .
+
+inst:IfcSpace_82  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_302 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_303  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "138" .
+
+inst:IfcSpace_82  ifcowl:name_IfcRoot  inst:IfcLabel_303 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_304  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-1 CNTL FILES" .
+
+inst:IfcSpace_82  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_304 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_83  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_305
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYU" .
+
+inst:IfcSpace_83  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_305 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_306  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "204" .
+
+inst:IfcSpace_83  ifcowl:name_IfcRoot  inst:IfcLabel_306 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_307  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CENTRAL FILES" .
+
+inst:IfcSpace_83  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_307 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_84  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_308
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYy" .
+
+inst:IfcSpace_84  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_308 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_309  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "214" .
+
+inst:IfcSpace_84  ifcowl:name_IfcRoot  inst:IfcLabel_309 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_85  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_310
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqW$" .
+
+inst:IfcSpace_85  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_310 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_311  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S201" .
+
+inst:IfcSpace_85  ifcowl:name_IfcRoot  inst:IfcLabel_311 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_261 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_86  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_312
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgtE" .
+
+inst:IfcSpace_86  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_312 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_313  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "122" .
+
+inst:IfcSpace_86  ifcowl:name_IfcRoot  inst:IfcLabel_313 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_314  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "RECYC" .
+
+inst:IfcSpace_86  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_314 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_87  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_315
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXT" .
+
+inst:IfcSpace_87  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_315 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_316  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "224" .
+
+inst:IfcSpace_87  ifcowl:name_IfcRoot  inst:IfcLabel_316 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_317  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-3 CONFERENCE" .
+
+inst:IfcSpace_87  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_317 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_88  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_318
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgs8" .
+
+inst:IfcSpace_88  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_318 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_319  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "128" .
+
+inst:IfcSpace_88  ifcowl:name_IfcRoot  inst:IfcLabel_319 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_320  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CHAPLAIN ASST NCO" .
+
+inst:IfcSpace_88  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_320 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_89  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_321
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYp" .
+
+inst:IfcSpace_89  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_321 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_322  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "211" .
+
+inst:IfcSpace_89  ifcowl:name_IfcRoot  inst:IfcLabel_322 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_90  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_323
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgma" .
+
+inst:IfcSpace_90  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_323 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_324  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "105" .
+
+inst:IfcSpace_90  ifcowl:name_IfcRoot  inst:IfcLabel_324 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_325  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CMD SGT MAJ" .
+
+inst:IfcSpace_90  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_325 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_91  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_326
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqX8" .
+
+inst:IfcSpace_91  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_326 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_327  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "218" .
+
+inst:IfcSpace_91  ifcowl:name_IfcRoot  inst:IfcLabel_327 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_328  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SIPR" .
+
+inst:IfcSpace_91  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_328 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_92  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_329
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgnU" .
+
+inst:IfcSpace_92  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_329 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_330  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "103" .
+
+inst:IfcSpace_92  ifcowl:name_IfcRoot  inst:IfcLabel_330 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_331  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "EXEC OFCR" .
+
+inst:IfcSpace_92  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_331 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_93  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_332
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgn0" .
+
+inst:IfcSpace_93  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_332 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_333  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "101" .
+
+inst:IfcSpace_93  ifcowl:name_IfcRoot  inst:IfcLabel_333 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_334  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "ENTRY" .
+
+inst:IfcSpace_93  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_334 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_94  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_335
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgnT" .
+
+inst:IfcSpace_94  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_335 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_336  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "102" .
+
+inst:IfcSpace_94  ifcowl:name_IfcRoot  inst:IfcLabel_336 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_337  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "DUTY OFCR" .
+
+inst:IfcSpace_94  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_337 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_95  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_338
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqX_" .
+
+inst:IfcSpace_95  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_338 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_339  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "235" .
+
+inst:IfcSpace_95  ifcowl:name_IfcRoot  inst:IfcLabel_339 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_340  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-2 CONFERENCE" .
+
+inst:IfcSpace_95  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_340 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_96  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_341
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDq$2" .
+
+inst:IfcSpace_96  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_341 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_342  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S202" .
+
+inst:IfcSpace_96  ifcowl:name_IfcRoot  inst:IfcLabel_342 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_261 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_97  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_343
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqX5" .
+
+inst:IfcSpace_97  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_343 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_344  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "217" .
+
+inst:IfcSpace_97  ifcowl:name_IfcRoot  inst:IfcLabel_344 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_247 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_98  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_345
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCA" .
+
+inst:IfcSpace_98  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_345 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_346  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "146" .
+
+inst:IfcSpace_98  ifcowl:name_IfcRoot  inst:IfcLabel_346 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_347  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "EXTERIOR VESTIBULE TO TSVA" .
+
+inst:IfcSpace_98  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_347 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_99  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_348
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYm" .
+
+inst:IfcSpace_99  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_348 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_349  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "210" .
+
+inst:IfcSpace_99  ifcowl:name_IfcRoot  inst:IfcLabel_349 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_350  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-3" .
+
+inst:IfcSpace_99  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_350 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_100  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_351
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "3If4otxpvBjO9DSa$bK$$x" .
+
+inst:IfcSpace_100  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_351 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_352  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "143A" .
+
+inst:IfcSpace_100  ifcowl:name_IfcRoot  inst:IfcLabel_352 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_244 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_101  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_353
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3d" .
+
+inst:IfcSpace_101  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_353 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_354  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "155" .
+
+inst:IfcSpace_101  ifcowl:name_IfcRoot  inst:IfcLabel_354 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_102  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_355
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsD" .
+
+inst:IfcSpace_102  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_355 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_356  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "129" .
+
+inst:IfcSpace_102  ifcowl:name_IfcRoot  inst:IfcLabel_356 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_357  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "CHAPLAIN" .
+
+inst:IfcSpace_102  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_357 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_103  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_358
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgCS" .
+
+inst:IfcSpace_103  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_358 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_359  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "152" .
+
+inst:IfcSpace_103  ifcowl:name_IfcRoot  inst:IfcLabel_359 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_244 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_104  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_360
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYv" .
+
+inst:IfcSpace_104  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_360 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_361  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "213" .
+
+inst:IfcSpace_104  ifcowl:name_IfcRoot  inst:IfcLabel_361 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_105  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_362
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsP" .
+
+inst:IfcSpace_105  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_362 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_363  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "133" .
+
+inst:IfcSpace_105  ifcowl:name_IfcRoot  inst:IfcLabel_363 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_364  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-4" .
+
+inst:IfcSpace_105  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_364 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_106  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_365
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqY$" .
+
+inst:IfcSpace_106  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_365 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_366  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "215" .
+
+inst:IfcSpace_106  ifcowl:name_IfcRoot  inst:IfcLabel_366 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_207 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_107  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_367
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmZ" .
+
+inst:IfcSpace_107  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_367 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_368  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "104" .
+
+inst:IfcSpace_107  ifcowl:name_IfcRoot  inst:IfcLabel_368 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_369  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "DEPUTY CMDR" .
+
+inst:IfcSpace_107  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_369 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_108  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_370
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgms" .
+
+inst:IfcSpace_108  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_370 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_371  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "111" .
+
+inst:IfcSpace_108  ifcowl:name_IfcRoot  inst:IfcLabel_371 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_372  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "BRID JUDGE ADV" .
+
+inst:IfcSpace_108  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_372 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_109  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_373
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgt7" .
+
+inst:IfcSpace_109  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_373 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_374  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "119" .
+
+inst:IfcSpace_109  ifcowl:name_IfcRoot  inst:IfcLabel_374 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_328 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_110  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_375
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXc" .
+
+inst:IfcSpace_110  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_375 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_376  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "227" .
+
+inst:IfcSpace_110  ifcowl:name_IfcRoot  inst:IfcLabel_376 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_377  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-6 STORAGE" .
+
+inst:IfcSpace_110  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_377 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_111  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_378
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqW1" .
+
+inst:IfcSpace_111  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_378 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_379  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "236" .
+
+inst:IfcSpace_111  ifcowl:name_IfcRoot  inst:IfcLabel_379 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_241 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_112  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_380
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgmx" .
+
+inst:IfcSpace_112  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_380 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_381  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "112" .
+
+inst:IfcSpace_112  ifcowl:name_IfcRoot  inst:IfcLabel_381 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_382  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "OP LAW JUDGE ADV" .
+
+inst:IfcSpace_112  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_382 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_113  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_383
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqYg" .
+
+inst:IfcSpace_113  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_383 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_384  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "208" .
+
+inst:IfcSpace_113  ifcowl:name_IfcRoot  inst:IfcLabel_384 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 ;
+        ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_258 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_114  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_385
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsE" .
+
+inst:IfcSpace_114  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_385 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_386  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "130" .
+
+inst:IfcSpace_114  ifcowl:name_IfcRoot  inst:IfcLabel_386 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_387  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "SR HR SGT" .
+
+inst:IfcSpace_114  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_387 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_115  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_388
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilg3Y" .
+
+inst:IfcSpace_115  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_388 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_389  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "154" .
+
+inst:IfcSpace_115  ifcowl:name_IfcRoot  inst:IfcLabel_389 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_390  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "ISM OFF" .
+
+inst:IfcSpace_115  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_390 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_116  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_391
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "06njXbG3HC4RydTXssDqXW" .
+
+inst:IfcSpace_116  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_391 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_392  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "225" .
+
+inst:IfcSpace_116  ifcowl:name_IfcRoot  inst:IfcLabel_392 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_393  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "S-2 STORAGE" .
+
+inst:IfcSpace_116  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_393 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_117  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_394
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgC9" .
+
+inst:IfcSpace_117  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_394 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_395  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "145" .
+
+inst:IfcSpace_117  ifcowl:name_IfcRoot  inst:IfcLabel_395 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_396  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "STOR." .
+
+inst:IfcSpace_117  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_396 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_118  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_397
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgty" .
+
+inst:IfcSpace_118  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_397 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_398  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "116" .
+
+inst:IfcSpace_118  ifcowl:name_IfcRoot  inst:IfcLabel_398 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_399  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "UPS/BATT RM" .
+
+inst:IfcSpace_118  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_399 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
+
+inst:IfcSpace_119  rdf:type  ifcowl:IfcSpace .
+
+inst:IfcGloballyUniqueId_400
+        rdf:type           ifcowl:IfcGloballyUniqueId ;
+        express:hasString  "04Sq57eS5FffNezn2ilgsy" .
+
+inst:IfcSpace_119  ifcowl:globalId_IfcRoot  inst:IfcGloballyUniqueId_400 ;
+        ifcowl:ownerHistory_IfcRoot  inst:IfcOwnerHistory_6 .
+
+inst:IfcLabel_401  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "124" .
+
+inst:IfcSpace_119  ifcowl:name_IfcRoot  inst:IfcLabel_401 ;
+        ifcowl:description_IfcRoot  inst:IfcLabel_120 .
+
+inst:IfcLabel_402  rdf:type  ifcowl:IfcLabel ;
+        express:hasString  "ELEV" .
+
+inst:IfcSpace_119  ifcowl:longName_IfcSpatialStructureElement  inst:IfcLabel_402 ;
+        ifcowl:compositionType_IfcSpatialStructureElement  ifcowl:ELEMENT ;
+        ifcowl:interiorOrExteriorSpace_IfcSpace  ifcowl:INTERNAL .
